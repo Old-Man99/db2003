@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>用户名</td>
+            <td>姓名</td>
+            <td>性别</td>
+        </tr>
+        <!--
+         th:each 控制元素的循环（根据集合）
+           迭代的状态对象 status.index/count
+         th:text 将数显示在标签之间
+         th:属性名称  替换属性对应的值
+
+         ${xx} EL表达式 从作用域对象中获取xx 属性的值
+         @{xxx{参数名}...(参数名=${abc}})}
+            用EL表达式获取abc属性的值 替换参数名 的位置
+         @{‘/manageUser/’+ ${user.urId}}
+      -->
+        <tr th:each="user, status : ${userList}">
+            <td th:text="${status.count}">序号</td>
+            <td th:text="${user.usercode}">用户名</td>
+            <td th:text="${user.username}">姓名</td>
+            <td th:text="@{${user.gender}}">性别</td>
+        </tr>
+    </table>
+</body>
+</html>
