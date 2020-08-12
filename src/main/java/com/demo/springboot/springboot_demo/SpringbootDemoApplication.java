@@ -11,7 +11,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan(basePackages = "com.demo.springboot.mybatis.mapper")
 //扫描Service
 @ComponentScan(basePackages = {"com.demo.springboot.mybatis.service",
-        "com.demo.springboot.mybatis.controller"})
+        "com.demo.springboot.mybatis.controller",
+        "com.demo.springboot.mybatis.config"})
 //开启注解事务
 @EnableTransactionManagement
 public class SpringbootDemoApplication {
